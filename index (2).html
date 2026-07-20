@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Untuk Putri Aulia 💖</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Great Vibes, Quicksand & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght=0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+    .serif-title {
+      font-family: 'Playfair Display', serif;
+    }
+    /* Font romantis khusus bergaya tulisan tangan cantik */
+    .romantic-font {
+      font-family: 'Great Vibes', cursive;
+    }
+    /* Animasi fade in lembut */
+    .fade-in {
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    /* Efek denyut jantung visual */
+    .heart-beat {
+      animation: beat .8s infinite alternate;
+    }
+    @keyframes beat {
+      to { transform: scale(1.15); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-emerald-950 via-teal-900 to-stone-900 text-stone-100 min-h-screen flex flex-col justify-between overflow-hidden relative selection:bg-rose-500 selection:text-white">
+
+  <!-- Background Canvas untuk Animasi Daun, Kelopak Bunga, dan Kembang Api -->
+  <canvas id="natureCanvas" class="absolute inset-0 pointer-events-none z-0"></canvas>
+
+  <header class="w-full p-4 flex justify-between items-center z-10">
+    <div class="flex items-center gap-2 text-emerald-400">
+      <!-- Icon Daun / Alam -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-leaf"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 8c-1 4.5-4.5 8-9 10Z"/><path d="M19 2c-2.26 4.33-5.27 7.14-8 10"/></svg>
+      <span class="text-sm font-semibold tracking-wider uppercase">Nature & Love</span>
+    </div>
+  </header>
+
+  <!-- Kontainer Utama Halaman -->
+  <main class="flex-grow flex items-center justify-center px-4 relative z-10 w-full max-w-lg mx-auto">
+    
+    <!-- HALAMAN 1: Selamat Datang -->
+    <div id="page1" class="w-full text-center bg-stone-900/65 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-emerald-800/30 shadow-2xl fade-in">
+      <div class="mb-6 inline-flex p-4 bg-emerald-500/10 rounded-full text-rose-400">
+        <!-- Icon Bunga -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.905 0-5.625-.915-7.843-2.418m15.686 0a11.956 11.956 0 01-1.423 5.22m-12.84 0a11.956 11.956 0 001.422 5.22" />
+        </svg>
+      </div>
+      <h1 class="serif-title text-3xl sm:text-4xl font-bold mb-4 text-emerald-300">Selamat Datang ✨</h1>
+      <p class="text-stone-300 mb-8 leading-relaxed">
+        Hai manis... Terima kasih sudah meluangkan waktu untuk membuka website sederhana ini. Ada sesuatu yang ingin aku tunjukkan kepadamu.
+      </p>
+      <button onclick="startJourney()" class="w-full py-4 px-6 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-stone-900 font-bold rounded-2xl shadow-lg transition duration-300 transform active:scale-95 flex items-center justify-center gap-2 text-base">
+        Masuk Lebih Dalam
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- HALAMAN 2: Siapkan Diri Anda (Detak Jantung & Countdown) -->
+    <div id="page2" class="w-full text-center bg-stone-900/65 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-emerald-800/30 shadow-2xl hidden fade-in">
+      <div id="heartIcon" class="mb-6 inline-flex p-4 bg-rose-500/10 rounded-full text-rose-500 heart-beat">
+        <!-- Icon Heart -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+      <h2 class="serif-title text-2xl sm:text-3xl font-bold mb-3 text-rose-400">Deg-degan ya? 💓</h2>
+      <p class="text-stone-300 text-lg mb-6 italic">"Siapkan diri anda sebaik mungkin..."</p>
+      
+      <!-- Countdown 3, 2, 1 Screen -->
+      <div id="startCountdownBox" class="mb-8">
+        <p class="text-sm text-stone-400 mb-2">Bersiaplah dalam...</p>
+        <span id="countdownDisplay" class="text-6xl font-black text-emerald-400 block tracking-wider drop-shadow-md">3</span>
+      </div>
+
+      <!-- Button ke Halaman 3 (Nunggu 5 detik setelah countdown) -->
+      <div id="nextButtonBox" class="hidden">
+        <button id="btnToPage3" disabled onclick="goToPage3()" class="w-full py-4 px-6 bg-stone-800 text-stone-500 font-bold rounded-2xl transition duration-300 flex items-center justify-center gap-2 cursor-not-allowed">
+          <span id="btnTimerText">Menyiapkan Halaman (5s)</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- HALAMAN 3: Tulisan Berjalan (Sayang & Cinta Putri Aulia) -->
+    <div id="page3" class="w-full bg-stone-900/65 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-emerald-800/30 shadow-2xl hidden fade-in">
+      <div class="min-h-[180px] flex items-center justify-center text-center">
+        <!-- Teks Berjalan Terkontrol -->
+        <p id="typewriterText" class="serif-title text-xl sm:text-2xl font-medium leading-relaxed text-emerald-100"></p>
+      </div>
+      
+      <!-- Button ke Halaman 4 (Muncul setelah 2 detik teks selesai berjalan) -->
+      <div id="btnToPage4Box" class="mt-8 opacity-0 transition-opacity duration-1000">
+        <button onclick="goToPage4()" class="w-full py-4 px-6 bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-stone-900 font-bold rounded-2xl shadow-lg transition duration-300 flex items-center justify-center gap-2">
+          Selanjutnya... 💚
+        </button>
+      </div>
+    </div>
+
+    <!-- HALAMAN 4: Will You Be My Girlfriend? (Yes/No) -->
+    <div id="page4" class="w-full text-center bg-stone-900/65 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-emerald-800/30 shadow-2xl hidden relative fade-in">
+      <div class="mb-4 inline-flex p-4 bg-emerald-500/10 rounded-full text-emerald-400">
+        <!-- Icon Sparks -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+        </svg>
+      </div>
+      <!-- Tampilan Font Romantis Indah -->
+      <h2 class="romantic-font text-5xl sm:text-6xl font-normal mb-6 text-rose-300 drop-shadow-md">
+        Will You Be My Girlfriend?
+      </h2>
+      <p class="text-stone-300 mb-8 leading-relaxed text-base sm:text-lg">
+        Sejak mengenalmu, alam terasa lebih indah dan hatiku menemukan rumahnya. Maukah kamu menjadi bagian terindah dari perjalanan hidupku?
+      </p>
+
+      <!-- Tempat Pilihan Yes atau No (Muncul setelah 2 detik) -->
+      <div id="optionButtonsBox" class="opacity-0 transition-opacity duration-1000 flex flex-col sm:flex-row gap-4 justify-center items-center relative min-h-[140px]">
+        <button id="btnYes" onclick="goToPage5()" class="w-full sm:w-1/2 py-4 px-6 bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-400 hover:to-teal-300 text-stone-900 font-bold text-lg rounded-2xl shadow-lg transition duration-300 transform active:scale-95 z-10">
+          Yes! 💕
+        </button>
+        <button id="btnNo" class="w-full sm:w-1/2 py-4 px-6 bg-rose-950/80 hover:bg-rose-900 text-rose-300 font-semibold text-lg rounded-2xl border border-rose-800/40 transition-all duration-150 absolute sm:static" style="transition: top 0.1s ease, left 0.1s ease;">
+          No 😢
+        </button>
+      </div>
+    </div>
+
+    <!-- HALAMAN 5: Penerimaan (TERIMA KASIHHH & KEMBANG API) -->
+    <div id="page5" class="w-full text-center bg-stone-900/65 backdrop-blur-md p-6 sm:p-8 rounded-3xl border border-emerald-800/30 shadow-2xl hidden fade-in">
+      <div class="mb-6 inline-flex p-4 bg-rose-500/20 rounded-full text-rose-400 heart-beat">
+        <!-- Huge Double Heart Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-16 w-16" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+      
+      <h1 class="serif-title text-xl sm:text-2xl font-extrabold mb-6 text-emerald-300 tracking-wide uppercase leading-snug">
+        TERIMA KASIHHH SAYANGGGGG UDAH PILIH AKU JADI PACAR KAMU!
+      </h1>
+      
+      <!-- Tampilan Font Romantis Indah -->
+      <p class="romantic-font text-5xl sm:text-6xl text-rose-300 mb-8 drop-shadow-md animate-pulse">
+        I Love Youuuu Putri Aulia
+      </p>
+
+      <!-- Informasi Tanggal Jadian Dinamis -->
+      <div class="bg-emerald-950/60 rounded-2xl p-4 border border-emerald-800/50 mb-6 shadow-inner">
+        <p class="text-xs text-emerald-400 uppercase tracking-widest mb-1">Hari Bersejarah Kita</p>
+        <p id="anniversaryDate" class="text-lg sm:text-xl font-bold text-stone-100">Menghitung kebahagiaan...</p>
+      </div>
+
+      <!-- Perintah Screenshot -->
+      <div class="flex items-center justify-center gap-2 text-stone-400 text-sm border-t border-stone-800 pt-4">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-teal-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+        <span>Silakan screenshot halaman ini & kirim ke aku ya! 📸</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Romantis -->
+  <footer class="w-full text-center p-4 text-xs text-stone-500 z-10">
+    Dibuat dengan segenap rasa cinta untuk Putri Aulia 🌲✨
+  </footer>
+
+  <!-- SCRIPT LOGIC UTAMA -->
+  <script>
+    // 1. ANIMASI CANVAS: Daun, Kelopak Bunga Gugur & Kembang Api
+    const canvas = document.getElementById('natureCanvas');
+    const ctx = canvas.getContext('2d');
+
+    let particles = [];
+    let fireworks = []; // Menyimpan partikel kembang api khusus
+    let activeFireworksInterval = null; // Menyimpan timer trigger kembang api
+    
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    // Kelas Partikel Daun / Kelopak Bunga
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * -canvas.height;
+        this.size = Math.random() * 8 + 5;
+        this.speedX = Math.random() * 1.5 - 0.75;
+        this.speedY = Math.random() * 1.5 + 1;
+        this.angle = Math.random() * 360;
+        this.spin = Math.random() * 2 - 1;
+        this.type = Math.random() > 0.4 ? 'leaf' : 'petal';
+        this.color = this.type === 'leaf' 
+          ? `hsla(${Math.random() * 30 + 100}, 70%, 40%, ${Math.random() * 0.4 + 0.3})` // Hijau alam alami
+          : `hsla(${Math.random() * 20 + 340}, 80%, 70%, ${Math.random() * 0.4 + 0.3})`; // Kelopak bunga mawar merah muda
+      }
+
+      update() {
+        this.y += this.speedY;
+        this.x += this.speedX;
+        this.angle += this.spin;
+
+        if (this.y > canvas.height) {
+          this.y = -20;
+          this.x = Math.random() * canvas.width;
+          this.speedY = Math.random() * 1.5 + 1;
+        }
+        if (this.x > canvas.width || this.x < 0) {
+          this.x = Math.random() * canvas.width;
+        }
+      }
+
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate((this.angle * Math.PI) / 180);
+        ctx.fillStyle = this.color;
+        
+        ctx.beginPath();
+        if (this.type === 'leaf') {
+          ctx.moveTo(0, -this.size);
+          ctx.quadraticCurveTo(this.size, 0, 0, this.size);
+          ctx.quadraticCurveTo(-this.size, 0, 0, -this.size);
+        } else {
+          ctx.moveTo(0, 0);
+          ctx.bezierCurveTo(-this.size, -this.size, -this.size * 1.5, this.size / 3, 0, this.size);
+          ctx.bezierCurveTo(this.size * 1.5, this.size / 3, this.size, -this.size, 0, 0);
+        }
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    // Kelas Partikel Kembang Api Mekar
+    class FireworkParticle {
+      constructor(x, y, color) {
+        this.x = x;
+        this.y = y;
+        this.color = color;
+        this.radius = Math.random() * 2 + 1;
+        
+        // Pola ledakan radial melingkar
+        const angle = Math.random() * Math.PI * 2;
+        const velocity = Math.random() * 4 + 1.5;
+        this.vx = Math.cos(angle) * velocity;
+        this.vy = Math.sin(angle) * velocity;
+        
+        this.alpha = 1;
+        this.decay = Math.random() * 0.015 + 0.012; // Pengurangan pendaran cahaya
+        this.gravity = 0.05; // Gaya tarik gravitasi bumi mini
+      }
+
+      update() {
+        this.vx *= 0.98; // Gesekan udara
+        this.vy *= 0.98;
+        this.vy += this.gravity;
+        this.x += this.vx;
+        this.y += this.vy;
+        this.alpha -= this.decay;
+      }
+
+      draw() {
+        ctx.save();
+        ctx.globalAlpha = this.alpha;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        // Efek glow di malam romantis
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = this.color;
+        ctx.fillStyle = this.color;
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    // Pemicu ledakan kembang api baru di posisi spesifik
+    function spawnFirework(x, y) {
+      const colors = [
+        '#fda4af', // Rose pink cantik
+        '#fcd34d', // Gold mewah
+        '#2dd4bf', // Teal modern
+        '#34d399', // Hijau alam berpendar
+        '#a78bfa'  // Ungu anggun
+      ];
+      const selectedColor = colors[Math.floor(Math.random() * colors.length)];
+      const numParticles = Math.floor(Math.random() * 35) + 35; // 35 - 70 serpihan cahaya
+
+      for (let i = 0; i < numParticles; i++) {
+        fireworks.push(new FireworkParticle(x, y, selectedColor));
+      }
+    }
+
+    // Generator kembang api otomatis berkala
+    function startAutomaticFireworks() {
+      if (activeFireworksInterval) return;
+
+      activeFireworksInterval = setInterval(() => {
+        // Tentukan koordinat acak di sepertiga atas layar
+        const randomX = Math.random() * (canvas.width * 0.8) + (canvas.width * 0.1);
+        const randomY = Math.random() * (canvas.height * 0.4) + (canvas.height * 0.1);
+        spawnFirework(randomX, randomY);
+      }, 750); // Ledakan kembang api baru muncul setiap 750 milidetik
+    }
+
+    function initParticles() {
+      const count = Math.min(60, Math.floor(window.innerWidth / 15));
+      for (let i = 0; i < count; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // 1. Gambar kelopak bunga & daun berguguran
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+
+      // 2. Gambar dan bersihkan serpihan kembang api yang sudah meredup
+      for (let i = fireworks.length - 1; i >= 0; i--) {
+        const fp = fireworks[i];
+        fp.update();
+        fp.draw();
+        if (fp.alpha <= 0) {
+          fireworks.splice(i, 1);
+        }
+      }
+
+      requestAnimationFrame(animateParticles);
+    }
+
+    initParticles();
+    animateParticles();
+
+
+    // 2. AUDIO GENERATOR (NADA DEG-DEGAN / HEARTBEAT MODERN & RAMAH SPEAKER HP)
+    let audioCtx = null;
+    let heartbeatInterval = null;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function playHeartbeatSound() {
+      initAudio();
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+
+      const playThump = (frequency, delay) => {
+        setTimeout(() => {
+          if (!audioCtx || audioCtx.state === 'closed') return;
+          
+          const osc = audioCtx.createOscillator();
+          const gainNode = audioCtx.createGain();
+
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(frequency, audioCtx.currentTime);
+          
+          gainNode.gain.setValueAtTime(0.7, audioCtx.currentTime);
+          gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.3);
+
+          osc.connect(gainNode);
+          gainNode.connect(audioCtx.destination);
+
+          osc.start();
+          osc.stop(audioCtx.currentTime + 0.35);
+        }, delay);
+      };
+
+      // Buat detak ganda (lub-dub) berulang setiap 950 milidetik
+      heartbeatInterval = setInterval(() => {
+        playThump(100, 0);   // "Lub" pertama
+        playThump(85, 200);  // "Dub" kedua
+      }, 950);
+    }
+
+    function stopHeartbeatSound() {
+      if (heartbeatInterval) {
+        clearInterval(heartbeatInterval);
+        heartbeatInterval = null;
+      }
+      if (audioCtx) {
+        audioCtx.close().then(() => {
+          audioCtx = null;
+        });
+      }
+    }
+
+
+    // 3. TRANSISI HALAMAN & FITUR SPESIFIK
+    
+    // Dipicu saat tombol halaman pertama diklik
+    function startJourney() {
+      try {
+        initAudio();
+      } catch(e) {
+        console.warn("Inisialisasi audio dibatasi:", e);
+      }
+      goToPage2();
+    }
+
+    // Ke Halaman 2
+    function goToPage2() {
+      document.getElementById('page1').classList.add('hidden');
+      const page2 = document.getElementById('page2');
+      page2.classList.remove('hidden');
+
+      try {
+        playHeartbeatSound();
+      } catch (e) {
+        console.warn("Detak jantung terhalang izin browser:", e);
+      }
+
+      // Mulai Countdown 3 2 1
+      let count = 3;
+      const countDisplay = document.getElementById('countdownDisplay');
+      
+      const interval = setInterval(() => {
+        count--;
+        if (count > 0) {
+          countDisplay.textContent = count;
+        } else if (count === 0) {
+          countDisplay.textContent = "Mulai!";
+        } else {
+          clearInterval(interval);
+          document.getElementById('startCountdownBox').classList.add('hidden');
+          
+          const nextBtnBox = document.getElementById('nextButtonBox');
+          nextBtnBox.classList.remove('hidden');
+          startButtonTimer();
+        }
+      }, 1000);
+    }
+
+    // Hitung mundur 5 detik untuk tombol lanjut di Halaman 2
+    function startButtonTimer() {
+      let timeLeft = 5;
+      const btn = document.getElementById('btnToPage3');
+      const timerText = document.getElementById('btnTimerText');
+
+      const btnInterval = setInterval(() => {
+        timeLeft--;
+        if (timeLeft > 0) {
+          timerText.textContent = `Tunggu ${timeLeft} detik...`;
+        } else {
+          clearInterval(btnInterval);
+          btn.disabled = false;
+          btn.classList.remove('bg-stone-800', 'text-stone-500', 'cursor-not-allowed');
+          btn.classList.add('bg-gradient-to-r', 'from-emerald-600', 'to-teal-500', 'hover:from-emerald-500', 'hover:to-teal-400', 'text-stone-900', 'shadow-lg');
+          timerText.textContent = "Silakan Lanjut ✨";
+        }
+      }, 1000);
+    }
+
+    // Ke Halaman 3
+    function goToPage3() {
+      stopHeartbeatSound();
+
+      document.getElementById('page2').classList.add('hidden');
+      document.getElementById('page3').classList.remove('hidden');
+
+      // Jalankan Tulisan Berjalan (Typewriter)
+      const fullText = "aku sayangggg dan cintaaaa banget sama kamu putri aulia, aku gamau lama' deket sama kamu tapi ngga pacaran sama kamu jadi.....";
+      const displayEl = document.getElementById('typewriterText');
+      let index = 0;
+
+      function typeWriter() {
+        if (index < fullText.length) {
+          displayEl.textContent += fullText.charAt(index);
+          index++;
+          let delay = fullText.charAt(index - 1) === ',' || fullText.charAt(index - 1) === '.' ? 400 : 70;
+          setTimeout(typeWriter, delay);
+        } else {
+          setTimeout(() => {
+            const btnBox = document.getElementById('btnToPage4Box');
+            btnBox.classList.remove('opacity-0');
+            btnBox.classList.add('opacity-100');
+          }, 2000);
+        }
+      }
+
+      setTimeout(typeWriter, 500);
+    }
+
+    // Ke Halaman 4
+    function goToPage4() {
+      document.getElementById('page3').classList.add('hidden');
+      document.getElementById('page4').classList.remove('hidden');
+
+      setTimeout(() => {
+        const optionBox = document.getElementById('optionButtonsBox');
+        optionBox.classList.remove('opacity-0');
+        optionBox.classList.add('opacity-100');
+        setupEscapeButton();
+      }, 2000);
+    }
+
+    // Setup Pergerakan Tombol No (Lari Sana-Sini)
+    function setupEscapeButton() {
+      const btnNo = document.getElementById('btnNo');
+      const pageContainer = document.getElementById('page4');
+
+      function escape() {
+        const containerRect = pageContainer.getBoundingClientRect();
+        const btnRect = btnNo.getBoundingClientRect();
+
+        const padding = 20;
+        const maxX = containerRect.width - btnRect.width - padding;
+        const maxY = containerRect.height - btnRect.height - padding;
+
+        const randomX = Math.max(padding, Math.floor(Math.random() * maxX));
+        const randomY = Math.max(padding, Math.floor(Math.random() * maxY));
+
+        btnNo.style.position = 'absolute';
+        btnNo.style.left = `${randomX}px`;
+        btnNo.style.top = `${randomY}px`;
+      }
+
+      btnNo.addEventListener('mouseenter', escape);
+      btnNo.addEventListener('touchstart', (e) => {
+        e.preventDefault();
+        escape();
+      });
+    }
+
+    // Ke Halaman 5 (Halaman Terakhir & Set Tanggal Jadian Dinamis)
+    function goToPage5() {
+      document.getElementById('page4').classList.add('hidden');
+      document.getElementById('page5').classList.remove('hidden');
+
+      // Tentukan tanggal hari ini secara dinamis
+      const today = new Date();
+      
+      const hari = today.getDate();
+      const daftarBulan = [
+        "Januari", "Februari", "Maret", "April", "Mei", "Juni", 
+        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+      ];
+      const bulan = daftarBulan[today.getMonth()];
+      const tahun = today.getFullYear();
+
+      const formattedDate = `${hari} ${bulan} ${tahun}`;
+      document.getElementById('anniversaryDate').textContent = `✨ ${formattedDate} ✨`;
+
+      // 1. Picu efek kelopak bunga ekstra meriah!
+      triggerLoveBurst();
+
+      // 2. AKTIFKAN DAN PICU EFEK KEMBANG API BERUNTUN SECARA PERIODIK!
+      startAutomaticFireworks();
+    }
+
+    // Ledakan kelopak bunga cinta saat mengklik "Yes"
+    function triggerLoveBurst() {
+      for (let i = 0; i < 50; i++) {
+        const burstParticle = new Particle();
+        burstParticle.y = canvas.height * 0.7;
+        burstParticle.x = canvas.width / 2;
+        burstParticle.speedX = Math.random() * 10 - 5;
+        burstParticle.speedY = Math.random() * -8 - 4;
+        burstParticle.type = 'petal';
+        particles.push(burstParticle);
+      }
+    }
+  </script>
+</body>
+</html>
+
